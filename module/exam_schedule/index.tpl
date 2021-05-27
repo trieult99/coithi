@@ -7,7 +7,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Ngày giờ</th>
-                    <th scope="col">Phòng thi3</th>
+                    <th scope="col">Phòng thi</th>
                     <th scope="col">Môn thi</th>
                     <th scope="col">Đã lấy đề</th>
                     <th scope="col">GV có mặt</th>
