@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <?php include("master/head.php")?>
+</head>
+
+<body>
+    <!-- Header -->
+    <?php include("master/header.php") ?>
+    <!-- End Header -->
+
+    <!-- Start Breadcrumb
+    ============================================= -->
+    <header class="minimal-header pt-3">
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-md-8 offset-md-2"> -->
+                <div class="col-md-12">
+                    <div class="minimal-header-text">
+                        <h1>Trang 404</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="<?php echo HTTP_SERVER?>">Trang chủ</a></li>
+                                <li class="breadcrumb-item active">Lỗi 404</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- /.End of header -->
+    <div class="error-content pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="error-text">
+                        <!-- <h1 class="error">404</h1> -->
+                        <div class="sheep">
+                            <div class="top">
+                                <div class="body"></div>
+                                <div class="head">
+                                    <div class="eye one"></div>
+                                    <div class="eye two"></div>
+                                    <div class="ear one"></div>
+                                    <div class="ear two"></div>
+                                </div>
+                            </div>
+                            <div class="legs">
+                                <div class="leg"></div>
+                                <div class="leg"></div>
+                                <div class="leg"></div>
+                                <div class="leg"></div>
+                            </div>
+                        </div>
+                        <h4>Trang bạn truy cập không tồn tại!</h4>
+                        <p>Xin lỗi, trang bạn đang tìm không tồn tại, đã bị đổi tên hoặc bị xóa. Bạn vui lòng liên hệ để được hỗ trợ.</p>
+                        <div class="text-center"><a href="<?php echo HTTP_SERVER ?>" class="btn btn-primary btn-round">Về trang chủ</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End 404 -->
+
+    <!-- Footer -->
+    <?php include("master/footer.php")?>
+    <!-- End Footer -->
+
+    <?php include("master/foot.php")?>
+</body>
+
+</html>

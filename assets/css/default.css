@@ -1,0 +1,474 @@
+/***********************************************************************************************************************
+* FONTS
+*
+* fonts of website
+***********************************************************************************************************************/
+/* roboto-300 - vietnamese_latin_latin-ext */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-300.eot"); /* IE9 Compat Modes */
+  src: local("Roboto Light"), local("Roboto-Light"),
+    url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-300.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-300.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-300.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-300.ttf")
+      format("truetype"); /* Safari, Android, iOS */
+  /*url('../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-300.svg#Roboto') format('svg'); /!* Legacy iOS *!/*/
+}
+/* roboto-regular - vietnamese_latin_latin-ext */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-regular.eot"); /* IE9 Compat Modes */
+  src: local("Roboto"), local("Roboto-Regular"),
+    url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-regular.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-regular.ttf")
+      format("truetype"); /* Safari, Android, iOS */
+  /*url('../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-regular.svg#Roboto') format('svg'); /!* Legacy iOS *!/*/
+}
+/* roboto-500 - vietnamese_latin_latin-ext */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-500.eot"); /* IE9 Compat Modes */
+  src: local("Roboto Medium"), local("Roboto-Medium"),
+    url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-500.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-500.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-500.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-500.ttf")
+      format("truetype"); /* Safari, Android, iOS */
+  /*url('../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-500.svg#Roboto') format('svg'); /!* Legacy iOS *!/*/
+}
+/* roboto-700 - vietnamese_latin_latin-ext */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-700.eot"); /* IE9 Compat Modes */
+  src: local("Roboto Bold"), local("Roboto-Bold"),
+    url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-700.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-700.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-700.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-700.ttf")
+      format("truetype"); /* Safari, Android, iOS */
+  /*url('../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-700.svg#Roboto') format('svg'); /!* Legacy iOS *!/*/
+}
+/* roboto-900 - vietnamese_latin_latin-ext */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-900.eot");
+  src: local("Roboto Black"), local("Roboto-Black"),
+    url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-900.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-900.woff2")
+      format("woff2"),
+    url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-900.woff")
+      format("woff"),
+    url("../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-900.ttf")
+      format("truetype");
+  /*url('../fonts/roboto/roboto-v20-vietnamese_latin_latin-ext-900.svg#Roboto') format('svg');*/
+}
+
+/* roboto-condensed-300 - vietnamese_latin */
+@font-face {
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/robotocondensed/roboto-condensed-v19-vietnamese_latin-300.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/robotocondensed/roboto-condensed-v19-vietnamese_latin-300.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("../fonts/robotocondensed/roboto-condensed-v19-vietnamese_latin-300.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/robotocondensed/roboto-condensed-v19-vietnamese_latin-300.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("../fonts/robotocondensed/roboto-condensed-v19-vietnamese_latin-300.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/robotocondensed/roboto-condensed-v19-vietnamese_latin-300.svg#RobotoCondensed")
+      format("svg"); /* Legacy iOS */
+}
+/* roboto-condensed-regular - vietnamese_latin */
+@font-face {
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/robotocondensed/roboto-condensed-v19-vietnamese_latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/robotocondensed/roboto-condensed-v19-vietnamese_latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("../fonts/robotocondensed/roboto-condensed-v19-vietnamese_latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/robotocondensed/roboto-condensed-v19-vietnamese_latin-regular.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("../fonts/robotocondensed/roboto-condensed-v19-vietnamese_latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/robotocondensed/roboto-condensed-v19-vietnamese_latin-regular.svg#RobotoCondensed")
+      format("svg"); /* Legacy iOS */
+}
+/* roboto-condensed-700 - vietnamese_latin */
+@font-face {
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/robotocondensed/roboto-condensed-v19-vietnamese_latin-700.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/robotocondensed/roboto-condensed-v19-vietnamese_latin-700.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("../fonts/robotocondensed/roboto-condensed-v19-vietnamese_latin-700.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/robotocondensed/roboto-condensed-v19-vietnamese_latin-700.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("../fonts/robotocondensed/roboto-condensed-v19-vietnamese_latin-700.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/robotocondensed/roboto-condensed-v19-vietnamese_latin-700.svg#RobotoCondensed")
+      format("svg"); /* Legacy iOS */
+}
+
+/***********************************************************************************************************************
+* STYLE
+*
+* style of website
+***********************************************************************************************************************/
+
+/* Color */
+
+:root {
+  --main-color: #054690;
+  --sub-color: #0574c3;
+}
+
+/* END */
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  line-height: 1.67em;
+  color: #000;
+}
+
+/* -----------------------------------Gif Loading javascript-------------- */
+
+/* When the body has the loading class, we turn
+the scrollbar off with overflow:hidden */
+body .modalLoading {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("../img/ajax-loader.gif");
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.8);
+  background-position: center;
+}
+
+/* Anytime the body has the loading class, our
+modal element will be visible */
+body.loading .modalLoading {
+  display: block;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.67em;
+}
+
+a {
+  color: #000d8d;
+}
+
+.link--a {
+  font-size: 0.88rem;
+  line-height: 1.67rem;
+}
+
+h1,
+.h1 {
+  color: #000;
+  font-size: 3rem;
+  line-height: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+h2,
+.h2 {
+  color: #000;
+  font-size: 2.12rem;
+  line-height: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+h3,
+.h3 {
+  color: #000;
+  font-size: 1.5rem;
+  line-height: 1.67em;
+  margin-bottom: 1.5em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+.mb--10 {
+  margin-bottom: 10px;
+}
+
+.help-block.with-errors {
+  font-size: 0.875rem;
+  color: red;
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 13px;
+  }
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl {
+    max-width: 1176px;
+  }
+}
+
+@media (min-width: 1500px) {
+  html {
+    font-size: 16px;
+  }
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl {
+    max-width: 1344px;
+    padding: 0 17px;
+  }
+  .row {
+    margin-right: -17px;
+    margin-left: -17px;
+  }
+  .col,
+  .col-1,
+  .col-10,
+  .col-11,
+  .col-12,
+  .col-2,
+  .col-3,
+  .col-4,
+  .col-5,
+  .col-6,
+  .col-7,
+  .col-8,
+  .col-9,
+  .col-auto,
+  .col-lg,
+  .col-lg-1,
+  .col-lg-10,
+  .col-lg-11,
+  .col-lg-12,
+  .col-lg-2,
+  .col-lg-3,
+  .col-lg-4,
+  .col-lg-5,
+  .col-lg-6,
+  .col-lg-7,
+  .col-lg-8,
+  .col-lg-9,
+  .col-lg-auto,
+  .col-md,
+  .col-md-1,
+  .col-md-10,
+  .col-md-11,
+  .col-md-12,
+  .col-md-2,
+  .col-md-3,
+  .col-md-4,
+  .col-md-5,
+  .col-md-6,
+  .col-md-7,
+  .col-md-8,
+  .col-md-9,
+  .col-md-auto,
+  .col-sm,
+  .col-sm-1,
+  .col-sm-10,
+  .col-sm-11,
+  .col-sm-12,
+  .col-sm-2,
+  .col-sm-3,
+  .col-sm-4,
+  .col-sm-5,
+  .col-sm-6,
+  .col-sm-7,
+  .col-sm-8,
+  .col-sm-9,
+  .col-sm-auto,
+  .col-xl,
+  .col-xl-1,
+  .col-xl-10,
+  .col-xl-11,
+  .col-xl-12,
+  .col-xl-2,
+  .col-xl-3,
+  .col-xl-4,
+  .col-xl-5,
+  .col-xl-6,
+  .col-xl-7,
+  .col-xl-8,
+  .col-xl-9,
+  .col-xl-auto {
+    padding: 0 17px;
+  }
+}
+
+@media (min-width: 1900px) {
+  html {
+    font-size: 17px;
+  }
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl {
+    max-width: 1512px;
+    padding: 0 19px;
+  }
+  .row {
+    margin-right: -19px;
+    margin-left: -19px;
+  }
+  .col,
+  .col-1,
+  .col-10,
+  .col-11,
+  .col-12,
+  .col-2,
+  .col-3,
+  .col-4,
+  .col-5,
+  .col-6,
+  .col-7,
+  .col-8,
+  .col-9,
+  .col-auto,
+  .col-lg,
+  .col-lg-1,
+  .col-lg-10,
+  .col-lg-11,
+  .col-lg-12,
+  .col-lg-2,
+  .col-lg-3,
+  .col-lg-4,
+  .col-lg-5,
+  .col-lg-6,
+  .col-lg-7,
+  .col-lg-8,
+  .col-lg-9,
+  .col-lg-auto,
+  .col-md,
+  .col-md-1,
+  .col-md-10,
+  .col-md-11,
+  .col-md-12,
+  .col-md-2,
+  .col-md-3,
+  .col-md-4,
+  .col-md-5,
+  .col-md-6,
+  .col-md-7,
+  .col-md-8,
+  .col-md-9,
+  .col-md-auto,
+  .col-sm,
+  .col-sm-1,
+  .col-sm-10,
+  .col-sm-11,
+  .col-sm-12,
+  .col-sm-2,
+  .col-sm-3,
+  .col-sm-4,
+  .col-sm-5,
+  .col-sm-6,
+  .col-sm-7,
+  .col-sm-8,
+  .col-sm-9,
+  .col-sm-auto,
+  .col-xl,
+  .col-xl-1,
+  .col-xl-10,
+  .col-xl-11,
+  .col-xl-12,
+  .col-xl-2,
+  .col-xl-3,
+  .col-xl-4,
+  .col-xl-5,
+  .col-xl-6,
+  .col-xl-7,
+  .col-xl-8,
+  .col-xl-9,
+  .col-xl-auto {
+    padding: 0 19px;
+  }
+}
+section {
+  margin-top: 30px;
+}
+
+section .heading {
+  color: var(--main-color);
+}
+
+th {
+  border-bottom-color: inherit !important;
+}

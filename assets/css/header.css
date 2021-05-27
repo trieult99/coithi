@@ -1,0 +1,12 @@
+.header .header__logo {
+  width: 50px;
+}
+.header .navbar {
+  background-color: var(--sub-color) !important;
+}
+.header .nav-item {
+  margin-right: 5px;
+}
+.header .nav-link {
+  color: white !important;
+}

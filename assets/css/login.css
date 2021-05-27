@@ -1,0 +1,40 @@
+.login {
+}
+.login__container {
+  margin-top: 100px;
+  width: 50%;
+  max-width: 250px;
+}
+
+.login__input form label {
+  color: black;
+  margin-top: 20px;
+}
+
+.login__input form input {
+  border-radius: 10px;
+  border: 1px solid #8a8a8a;
+  box-sizing: border-box;
+  height: 36px;
+  width: 100%;
+  text-align: center;
+}
+
+.login__input form input:focus {
+  outline: none;
+}
+
+.login__submit {
+  margin-top: 30px;
+  padding: 5px 0;
+  width: 100%;
+  background-color: white;
+  color: var(--sub-color);
+  border: 1px solid var(--sub-color);
+  border-radius: 10px;
+}
+
+.login__submit:focus {
+  outline: none;
+  background: rgba(0, 0, 0, 0.1);
+}
