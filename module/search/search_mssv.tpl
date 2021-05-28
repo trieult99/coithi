@@ -15,14 +15,12 @@
             <div id="searchmssv__info">
                 <div class="row">
                     <div class="col-3 text-center">
-                        <img width="100%" src="<?=IMAGE_SERVER.$studentInfo["image"]?>" alt="">
+                        <img width="100%" src="../../data/students/images/<?=$mssv?>.jpg" alt="">
                     </div>
                     <div class="col-8 offset-1">
                         <h4>Thông tin cá nhân</h4>
                         <div>Họ tên: <?= $studentInfo["name"] ?></div>
                         <div>MSSV: <?= $studentInfo["mssv"] ?></div>
-                        <div>Khóa: 2017</div>
-                        <div>Ngày sinh: 25/09/1999</div>
                         <hr>
                         <h4>Lịch thi</h4>
                         <table id="TableSort" class="table table-bordered">
@@ -32,8 +30,8 @@
                                     <th scope="col">Ngày giờ</th>
                                     <th scope="col">Phòng thi</th>
                                     <th scope="col">Môn thi</th>
-                                    <th scope="col">Đã lấy đề</th>
-                                    <th scope="col">GV có mặt</th>
+                                    <!-- <th scope="col">Đã lấy đề</th>
+                                    <th scope="col">GV có mặt</th> -->
                                     <th scope="col"></th>
 
                                 </tr>
@@ -53,7 +51,7 @@
                                         <td>
                                             <?= $schedule["subjectname"] ?>
                                         </td>
-                                        <td>
+                                        <!-- <td>
                                             <form action="">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox">
@@ -75,7 +73,7 @@
                                                     <?= $schedule["supervisor2name"] ?>
                                                 </label>
                                             </div>
-                                        </td>
+                                        </td> -->
                                         <td>
                                             <div>
                                                 <a href="<?php HTTP_SERVER ?>/exam_schedule/student_list.gbe?classroomcode=<?= $schedule['classroomcode'] ?>" target="_blank">Danh sách sinh

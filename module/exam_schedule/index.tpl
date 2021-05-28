@@ -38,20 +38,22 @@
                             </form>
                         </td>
                         <td>
-                            <form action="">
+                            <?php if ($schedule["supervisor1"] == $session["loginusercode"]) ?>
+                            <form action="" class="mb-0">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="">
+                                    <input class="form-check-input" type="checkbox" value="" <?= $schedule["supervisor1"] != $session["loginusercode"] ? "disabled" : "" ?> <?= $schedule["supervisor1came"]  ? "checked" : "" ?>>
                                     <label class="form-check-label" for="flexCheckDefault">
                                         <?= $schedule["supervisor1name"] ?>
                                     </label>
                                 </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" <?= $schedule["supervisor2"] != $session["loginusercode"] ? "disabled" : "" ?> <?= $schedule["supervisor1came"]  ? "checked" : "" ?>>
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        <?= $schedule["supervisor2name"] ?>
+                                    </label>
+                                </div>
                             </form>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" disabled checked>
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    <?= $schedule["supervisor2name"] ?>
-                                </label>
-                            </div>
                         </td>
                         <td>
                             <div>
