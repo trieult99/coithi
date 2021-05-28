@@ -15,4 +15,5 @@ if ($mssv) {
     $data = json_decode($jsontext, true);
     $studentInfo = $data["data"]["student_info"];
     $studentSchedules = $data["data"]["student_schedule"];
+    $error = $data["error"];
 }
