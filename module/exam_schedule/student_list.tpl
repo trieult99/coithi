@@ -48,7 +48,7 @@
                     <td>17520457</td>
                     <td>
                         <input class="form-check-input bg-danger border-0" type="checkbox" value="" disabled checked>
-                    </td>   
+                    </td>
                     <td></td>
 
                 </tr>

@@ -231,30 +231,6 @@ a {
   line-height: 1.67rem;
 }
 
-h1,
-.h1 {
-  color: #000;
-  font-size: 3rem;
-  line-height: 1.2em;
-  margin-bottom: 0.5em;
-}
-
-h2,
-.h2 {
-  color: #000;
-  font-size: 2.12rem;
-  line-height: 1.2em;
-  margin-bottom: 0.5em;
-}
-
-h3,
-.h3 {
-  color: #000;
-  font-size: 1.5rem;
-  line-height: 1.67em;
-  margin-bottom: 1.5em;
-}
-
 img {
   max-width: 100%;
   height: auto;
@@ -467,6 +443,7 @@ section {
 
 section .heading {
   color: var(--main-color);
+  margin-bottom: 20px;
 }
 
 th {

@@ -17,52 +17,51 @@
             </thead>
             <tbody>
                 <?php if ($listSchedule) foreach ($listSchedule as $index => $schedule) { ?>
-                <tr>
-                    <th scope="row">
-                        <?= $index ?>
-                    </th>
-                    <td>
-                        <?= $schedule["time"] ?>
-                    </td>
-                    <td>
-                        <?= $schedule["classroomcode"] ?>
-                    </td>
-                    <td>
-                        <?= $schedule["subjectname"] ?>
-                    </td>
-                    <td>
-                        <form action="">
+                    <tr>
+                        <th scope="row">
+                            <?= $index ?>
+                        </th>
+                        <td>
+                            <?= $schedule["time"] ?>
+                        </td>
+                        <td>
+                            <?= $schedule["classroomname"] ?>
+                        </td>
+                        <td>
+                            <?= $schedule["subjectname"] ?>
+                        </td>
+                        <td>
+                            <form action="">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        <?= $schedule["supervisor1name"] ?>
+                                    </label>
+                                </div>
+                            </form>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox">
-                            </div>
-                        </form>
-                    </td>
-                    <td>
-                        <form action="">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="">
+                                <input class="form-check-input" type="checkbox" value="" disabled checked>
                                 <label class="form-check-label" for="flexCheckDefault">
-                                    <?= $schedule["supervisor1name"] ?>
+                                    <?= $schedule["supervisor2name"] ?>
                                 </label>
                             </div>
-                        </form>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" disabled checked>
-                            <label class="form-check-label" for="flexCheckDefault">
-                                <?= $schedule["supervisor2name"] ?>
-                            </label>
-                        </div>
-                    </td>
-                    <td>
-                        <div>
-                            <a href="<?php HTTP_SERVER ?>/exam_schedule/student_list.gbe?classroomcode=<?=$schedule['classroomcode']?>"
-                                target="_blank">Danh sách sinh
-                                viên</a> -
-                            <a href="#" class="text-success"><i class="fas fa-download"></i></a>
-                        </div>
-                    </td>
+                        </td>
+                        <td>
+                            <div>
+                                <a href="<?php HTTP_SERVER ?>/exam_schedule/student_list.gbe?classroomcode=<?= $schedule['classroomcode'] ?>" target="_blank">Danh sách sinh
+                                    viên</a> -
+                                <a href="#" class="text-success"><i class="fas fa-download"></i></a>
+                            </div>
+                        </td>
 
-                </tr>
+                    </tr>
                 <?php } ?>
             </tbody>
         </table>

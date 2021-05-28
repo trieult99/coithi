@@ -18,7 +18,7 @@
                         <span><i class="fas fa-user"></i> <?=$_SESSION["loginuserfullname"]?></span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Log Out</a></li>
+                        <li><a class="dropdown-item" href="<?php HTTP_SERVER ?>/logout.php">Log Out</a></li>
                     </ul>
                 </div>
             </div>
