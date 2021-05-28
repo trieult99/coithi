@@ -4,7 +4,7 @@
 
         <form action="/search/search_mssv.gbe" class="searchbar">
             <div class="input-group">
-                <input type="search" class="form-control" name="mssv" placeholder="Nhập mã số sinh viên ..." />
+                <input type="search" class="form-control" name="mssv" placeholder="Nhập mã số sinh viên ..." value="<?= $mssv ? $mssv : '' ?>" />
                 <button type="submit" class="btn btn-outline-primary">Tìm kiếm</button>
             </div>
         </form>
@@ -15,7 +15,7 @@
             <div id="searchmssv__info">
                 <div class="row">
                     <div class="col-3 text-center">
-                        <img width="100%" src="../../assets/img/user.png" alt="">
+                        <img width="100%" src="<?=IMAGE_SERVER.$studentInfo["image"]?>" alt="">
                     </div>
                     <div class="col-8 offset-1">
                         <h4>Thông tin cá nhân</h4>

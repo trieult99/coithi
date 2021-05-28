@@ -6,7 +6,7 @@ date_default_timezone_set("Asia/Ho_Chi_Minh");
 
 // CONFIG DOMAIN
 define('HTTP_SERVER', "https://spkt.com/");
-define('IMAGE_SERVER', "https://spkt.com/data/fileserver/images/");
+define('IMAGE_SERVER', "https://spkt.com/data/students/images/");
 
 define('IMAGE_VERSION', '1.2');
 define('FILE_VERSION', '1.2');

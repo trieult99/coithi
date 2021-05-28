@@ -1,4 +1,8 @@
 <?php
+if (empty(@$_SESSION['loginusercode'])) {
+    header('Location: ' . HTTP_SERVER . 'logout.php');
+}
+
 $gbeLayout = "layout.tpl";
 $gbeTemplate = "search_mssv.tpl";
 
