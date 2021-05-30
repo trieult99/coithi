@@ -31,7 +31,7 @@
 <link rel="shortcut icon" href="<?php echo HTTP_SERVER ?>favicon.ico?v=<?php echo FILE_VERSION ?>" type="image/x-icon">
 
 <!-- ===================== JQUERY ============ -->
-<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script src="./assets/plugins/jquery/jquery-3.4.1.min.js"></script>
 
 <!-- ========== Start Stylesheet ========== -->
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap5.min.css">

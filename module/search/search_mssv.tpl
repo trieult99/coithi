@@ -15,7 +15,7 @@
             <div id="searchmssv__info">
                 <div class="row">
                     <div class="col-3 text-center">
-                        <img width="100%" src="../../data/students/images/<?=$mssv?>.jpg" alt="">
+                        <img width="100%" src="<?= IMAGE_SERVER . $mssv ?>.jpg" alt="">
                     </div>
                     <div class="col-8 offset-1">
                         <h4>Thông tin cá nhân</h4>
@@ -27,7 +27,7 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Ngày giờ</th>
+                                    <th scope="col">Thời gian thi</th>
                                     <th scope="col">Phòng thi</th>
                                     <th scope="col">Môn thi</th>
                                     <!-- <th scope="col">Đã lấy đề</th>

@@ -2,12 +2,11 @@
 if (empty(@$_SESSION['loginusercode'])) {
     header('Location: ' . HTTP_SERVER . 'logout.php');
 }
-
+$session = @$_SESSION;
 $gbeLayout = "layout.tpl";
 $gbeTemplate = "index.tpl";
 
-addGlobalCSS("./assets/css/examschedule.css");
-$session = @$_SESSION;
+// addGlobalCSS("./assets/css/examschedule.css");
 $params = array(
     'type' => "all"
 );
