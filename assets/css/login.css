@@ -2,8 +2,9 @@
   height: 100vh;
 }
 .login__container {
-  width: 40%;
+  width: 70%;
   padding: 20px;
+  max-width: 300px;
 }
 
 .login__input form label {
