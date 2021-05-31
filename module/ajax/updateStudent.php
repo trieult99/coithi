@@ -6,9 +6,8 @@ $params = array(
     "note" => @$_POST["note"],
     "image" => @$_POST["image"]
 );
-
-var_dump($params);
 $jsontext = callAPI("", "classroom_updateStudent.api", array(), $params);
 $gbeAPIData = json_decode($jsontext, true);
+var_dump($params);
 
 echo $jsontext;
