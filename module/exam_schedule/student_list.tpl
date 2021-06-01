@@ -34,7 +34,7 @@
                         </td>
                         <td><?= $student["name"] ?></td>
                         <td>
-                            <input data-classroomcode="<?= $classroomcode ?>" data-mssv="<?= $student["mssv"] ?>" data-name="<?= $student["name"] ?>" class="form-check-input" type="checkbox" <?= $session["loginusertypecode"] == "teacher" ? 'onclick="checkAbsent(this)"' : "disabled" ?> <?= $student["isabsent"] ? "checked" : ""  ?>>
+                            <input data-classroomcode="<?= $classroomcode ?>" data-mssv="<?= $student["mssv"] ?>" data-name="<?= $student["name"] ?>" class="form-check-input" type="checkbox" <?= $session["loginusertypecode"] == "teacher" ? 'onclick="checkAbsent(this)"' : "disabled" ?> <?= $student["isabsent"] ? "checked style='opacity: 1'" : ""  ?>>
                         </td>
                         <td>
                             <ul class="list-group list-group-flush" id="vp_<?= $index ?>">
