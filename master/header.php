@@ -12,10 +12,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?php HTTP_SERVER ?>/search/search_mssv.gbe">Tra cứu thông tin sinh viên</a>
                     </li>
+                    <?php if (@$_SESSION["loginusertypecode"] == "secretary") { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php HTTP_SERVER ?>/supervisor_list/supervisor_list.gbe">Danh sánh giám thị</a>
+                        </li>
+                    <?php } ?>
                 </ul>
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span><i class="fas fa-user"></i> <?=$_SESSION["loginuserfullname"]?></span>
+                        <span><i class="fas fa-user"></i> <?= $_SESSION["loginuserfullname"] ?></span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="<?php HTTP_SERVER ?>/logout.php">Log Out</a></li>
