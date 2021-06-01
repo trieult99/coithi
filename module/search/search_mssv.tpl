@@ -92,7 +92,7 @@
         <?php } ?>
     </div>
 </section>
-<script>
+<!-- <script>
     $(document).ready(function() {
         $('#TableSort').DataTable({
             "paging": false,
@@ -100,8 +100,8 @@
             "aaSorting": [],
             columnDefs: [{
                 orderable: false,
-                targets: [2, 3, 4, 5, 6]
+                targets: [2, 3, 4]
             }]
         });
     });
-</script>
+</script> -->

@@ -20,7 +20,7 @@
                     <th scope="col">Họ và tên</th>
                     <th scope="col" style="width: 10%;">Vắng</th>
                     <th scope="col" style="width: 40%">Vi phạm</th>
-
+                    <th scope="col"> Biên bản </th>
                 </tr>
             </thead>
             <tbody>
@@ -50,47 +50,15 @@
                                 <?php } ?>
                             </ul>
                         </td>
+                        <td>
+                            <?php if ($student["report"] != "") { ?>
+                                <a href="<?= HTTP_SERVER . '/' . $student["report"] ?>" class="text-dark" download><i class="fas fa-file-download"></i> Biên_bản.jpg</a>
+                            <?php } ?>
+                        </td>
                     </tr>
                 <?php } ?>
             </tbody>
         </table>
-
-        <!-- <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="ModalLabel"></h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <label class="form-label" for="content">Content</label>
-                        <input class="form-control" id="content" type="text">
-                        <select class="form-select" id="content">
-                            <option value="Quay cóp" selected>Quay cóp</option>
-                            <option value="Xem tài liệu">Xem tài liệu</option>
-                        </select>
-
-                        <label class="form-label mt-2" for="solution">Solution</label>
-                        <input class="form-control" id="solution" type="text">
-                        <select class="form-select" id="solution">
-                            <option value="Nhắc nhở" selected>Nhắc nhở</option>
-                            <option value="Lập biên bản">Lập biên bản</option>
-                        </select>
-
-                        <div id="reportImgContainer" style="display: none">
-                            <label class="form-label mt-2" for="reportImg">Biên bản (upload image)</label>
-                            <input type="file" class="form-control" id="reportImg">
-                        </div>
-
-                        <input class="form-control" id="solution" type="text">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="addNote">Add</button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
 
         <div class="modal fade" id="Modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">

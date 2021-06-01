@@ -48,28 +48,30 @@ $("#addNote").click(() => {
             if ($("#reportImg")[0].files.length != 0) {
                 var file_data;
                 file_data = $('#reportImg').prop('files')[0];
-               
+
                 let form_data = new FormData();
-                form_data.append('image', file_data);
-                console.log(form_data.get('image'));
+                form_data.append('image', file_data, classroomcode + '_' + mssv + ".jpg");
+
                 xhr(main_http_server + "uploadimage.php", form_data, (res) => {
                     var response = JSON.parse(res);
-                    // if (response.error != '') {
-                    alert(response)
-                    // }
+                    if (response[0].status == 'sucess') {
+                        console.log(response[0].url);
+                        formData.append("image", response[0].url);
+                        classroom_updateStudent(formData);
+                        location.reload();
+                    }
                 });
+            } else {
+                classroom_updateStudent(formData);
+                location.reload();
             }
-
-
-            classroom_updateStudent(formData);
-            location.reload();
             // $ulEle = $('#' + $('#Modal').attr("data-ulid"));
             // $liEle = $('#' + $('#Modal').attr("data-ulid") + ' li').last();
             // $ulEle.append(`<li name="handleaddevent" class="list-group-item" style="cursor: pointer" data-bs-toggle="modal" data-bs-target="#Modal" onclick="openModal(this)" data-mssv="{mssv}" data-classroomcode="<?= $classroomcode ?>" data-ulid="vp_<?= $index ?>"><u>Add</u></li>`);
             // $liEle.replaceWith('<li class="list-group-item">' + note + '</li>');
         }
 })
-// var file_data = $('#file').prop('files')[0];
+
 $('#solution').on('change', function () {
     console.log(this.value);
     if (this.value == "Lập biên bản")

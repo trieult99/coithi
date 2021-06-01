@@ -1,6 +1,12 @@
 <section class="examschedule">
     <div class="container">
         <h2 class="heading">LỊCH THI</h2>
+
+        <div class="input-group mb-3">
+            <input type="file" class="form-control" id="inputGroupFile02">
+            <label class="input-group-text" for="inputGroupFile02">Tạo lịch thi mới</label>
+        </div>
+
         <table id="TableSort" class="table table-bordered">
             <thead class="thead-light">
                 <tr>
@@ -16,51 +22,58 @@
             </thead>
             <tbody>
                 <?php if ($listSchedule) foreach ($listSchedule as $index => $schedule) { ?>
-                    <tr class="bg-light">
-                        <th scope="row">
-                            <?= $index ?>
-                        </th>
-                        <td>
-                            <?= $schedule["time"] ?>
-                        </td>
-                        <td>
-                            <?= $schedule["classroomname"] ?>
-                        </td>
-                        <td>
-                            <?= $schedule["subjectname"] ?>
-                        </td>
-                        <td>
-                            <input data-classroomname="<?= $schedule['classroomname'] ?>" data-classroomcode="<?= $schedule['classroomcode'] ?>" class="form-check-input" type="checkbox" <?= $session["loginusertypecode"] == "secretary" ? 'onclick="checkExam(this)"' : "disabled" ?> <?= $schedule["exampaperstatus"]  ? "checked" : "" ?>>
-                        </td>
-                        <td>
-                            <?php if ($schedule["supervisor1"] == $session["loginusercode"]) ?>
-                            <form action="" class="mb-0">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" disabled <?= $schedule["supervisor1came"]  ? "checked" : "" ?>>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        <?= $schedule["supervisor1name"] ?>
-                                        <?= $schedule["supervisor1came"] ? '(' . $schedule["supervisor1checkintime"] . ')' : "" ?>
-                                    </label>
-                                </div>
-
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" disabled <?= $schedule["supervisor1came"]  ? "checked" : "" ?>>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        <?= $schedule["supervisor2name"] ?>
-                                        <?= $schedule["supervisor2came"] ? '(' . $schedule["supervisor2checkintime"] . ')' : "" ?>
-                                    </label>
-                                </div>
-                            </form>
-                        </td>
-                        <td>
-                            <div>
-                                <a href="<?php HTTP_SERVER ?>/exam_schedule/student_list.gbe?classroomcode=<?= $schedule['classroomcode'] ?>" target="_blank">Danh sách sinh
-                                    viên</a> -
-                                <a href="#" class="text-success"><i class="fas fa-download"></i></a>
+                <tr class="bg-light">
+                    <th scope="row">
+                        <?= $index ?>
+                    </th>
+                    <td>
+                        <?= $schedule["time"] ?>
+                    </td>
+                    <td>
+                        <?= $schedule["classroomname"] ?>
+                    </td>
+                    <td>
+                        <?= $schedule["subjectname"] ?>
+                    </td>
+                    <td>
+                        <input data-classroomname="<?= $schedule['classroomname'] ?>"
+                            data-classroomcode="<?= $schedule['classroomcode'] ?>" class="form-check-input"
+                            type="checkbox" <?=$session["loginusertypecode"]=="secretary" ? 'onclick="checkExam(this)"'
+                            : "disabled" ?>
+                        <?= $schedule["exampaperstatus"]  ? "checked" : "" ?>>
+                    </td>
+                    <td>
+                        <?php if ($schedule["supervisor1"] == $session["loginusercode"]) ?>
+                        <form action="" class="mb-0">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" disabled
+                                    <?=$schedule["supervisor1came"] ? "checked" : "" ?>>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    <?= $schedule["supervisor1name"] ?>
+                                    <?= $schedule["supervisor1came"] ? '(' . $schedule["supervisor1checkintime"] . ')' : "" ?>
+                                </label>
                             </div>
-                        </td>
 
-                    </tr>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" disabled
+                                    <?=$schedule["supervisor1came"] ? "checked" : "" ?>>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    <?= $schedule["supervisor2name"] ?>
+                                    <?= $schedule["supervisor2came"] ? '(' . $schedule["supervisor2checkintime"] . ')' : "" ?>
+                                </label>
+                            </div>
+                        </form>
+                    </td>
+                    <td>
+                        <div>
+                            <a href="<?php HTTP_SERVER ?>/exam_schedule/student_list.gbe?classroomcode=<?= $schedule['classroomcode'] ?>"
+                                target="_blank">Danh sách sinh
+                                viên</a> -
+                            <a href="#" class="text-success"><i class="fas fa-download"></i></a>
+                        </div>
+                    </td>
+
+                </tr>
                 <?php } ?>
             </tbody>
         </table>
