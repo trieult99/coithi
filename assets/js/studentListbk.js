@@ -34,12 +34,28 @@ $("#addNote").click(() => {
     let mssv = $('#Modal').attr("data-mssv");
     let classroomcode = $('#Modal').attr("data-classroomcode");
     let note = $("#content").val() + " - " + $("#solution").val();
+    // var file_data;
 
-    if ($("#solution").val() == "Lập biên bản" && $("#reportImg")[0].files.length === 0) {
+    // if ($("#solution").val() != "")
+    //     file_data = $('#reportImg').prop('files')[0];
+
+    if ($("#reportImg").val() == "") {
         alert("Đăng tải biên bản dưới dạng hình ảnh cho biện pháp 'Lập biên bản'");
     } else
         if (note != "" && confirm("Xác nhận sinh viên " + mssv + " vi phạm?")) {
             let formData = new FormData();
+            // -------------------------------------------
+            // if (file_data) {
+            //     let form_data = new FormData();
+            //     form_data.append('image', file_data);
+            //     xhr(main_http_server + "uploadimage.php", form_data, (res) => {
+            //         var response = JSON.parse(res);
+            //         // if (response.error != '') {
+            //         alert(response)
+            //         // }
+            //     });
+            // }
+            // -------------------------------------------
             formData.append("classroomcode", classroomcode);
             formData.append("mssv", mssv);
             formData.append("note", note);

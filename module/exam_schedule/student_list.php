@@ -5,7 +5,6 @@ if(empty(@$_SESSION['loginusercode'])) {
 $session = @$_SESSION;
 $gbeLayout = "layout.tpl";
 $gbeTemplate = "student_list.tpl";
-
 addGlobalJS("./assets/js/studentList.js");
 
 $classroomcode = @$_GET["classroomcode"];

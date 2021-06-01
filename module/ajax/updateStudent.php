@@ -8,6 +8,5 @@ $params = array(
 );
 $jsontext = callAPI("", "classroom_updateStudent.api", array(), $params);
 $gbeAPIData = json_decode($jsontext, true);
-var_dump($params);
 
 echo $jsontext;

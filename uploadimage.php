@@ -22,7 +22,7 @@ $mtypes = array(
     'gif' => 'image/gif'
 ); // mimetype
 $limitFileSize = 30000000; // 3000000 = 30MB.
-$root_dir = "assets/img/report/"; // chỗ lưu file
+$root_dir = "data/report/"; // chỗ lưu file
 $createDir_permission = true; // quyền tạo subfolder
 $sub_dir = $root_dir;
 //--------------------- END CONFIG ---------------------------

@@ -6,7 +6,7 @@ $session = @$_SESSION;
 $gbeLayout = "layout.tpl";
 $gbeTemplate = "index.tpl";
 
-// addGlobalCSS("./assets/css/examschedule.css");
+addGlobalJS("./assets/js/examschedule.js");
 $params = array(
     'type' => "all"
 );

@@ -1,29 +1,6 @@
 <section class="examschedule">
     <div class="container">
         <h2 class="heading">LỊCH THI</h2>
-        <!-- Button trigger modal -->
-        <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Launch demo modal
-        </button>
-
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- ------------------- -->
         <table id="TableSort" class="table table-bordered">
             <thead class="thead-light">
                 <tr>
@@ -53,7 +30,7 @@
                             <?= $schedule["subjectname"] ?>
                         </td>
                         <td>
-                            <input class="form-check-input" type="checkbox" <?= $session["loginusertypecode"] == "secretary" ? "" : "disabled" ?> <?= $schedule["exampaperstatus"]  ? "checked" : "" ?>>
+                            <input data-classroomname="<?= $schedule['classroomname'] ?>" data-classroomcode="<?= $schedule['classroomcode'] ?>" class="form-check-input" type="checkbox" <?= $session["loginusertypecode"] == "secretary" ? 'onclick="checkExam(this)"' : "disabled" ?> <?= $schedule["exampaperstatus"]  ? "checked" : "" ?>>
                         </td>
                         <td>
                             <?php if ($schedule["supervisor1"] == $session["loginusercode"]) ?>
