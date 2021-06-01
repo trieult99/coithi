@@ -37,7 +37,7 @@
                         </td>
                         <td>
                             <input data-classroomname="<?= $schedule['classroomname'] ?>" data-classroomcode="<?= $schedule['classroomcode'] ?>" class="form-check-input" type="checkbox" <?= $session["loginusertypecode"] == "secretary" ? 'onclick="checkExam(this)"'
-                                                                                                                                                                                                : "disabled" ?> <?= $schedule["exampaperstatus"]  ? "checked style='opacity: 1'" : "" ?>>
+                                                                                                                                                                                                : "disabled" ?> <?= $schedule["exampaperstatus"]  ? "checked" : "" ?>>
                         </td>
                         <td>
                             <div class="form-check">
