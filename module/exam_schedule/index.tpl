@@ -40,24 +40,21 @@
                                                                                                                                                                                                 : "disabled" ?> <?= $schedule["exampaperstatus"]  ? "checked" : "" ?>>
                         </td>
                         <td>
-                            <?php if ($schedule["supervisor1"] == $session["loginusercode"]) ?>
-                            <form action="" class="mb-0">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" disabled <?= $schedule["supervisor1came"] ? "checked" : "" ?>>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        <?= $schedule["supervisor1name"] ?>
-                                        <?= $schedule["supervisor1came"] ? '(' . $schedule["supervisor1checkintime"] . ')' : "" ?>
-                                    </label>
-                                </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" disabled <?= $schedule["issupervisor1came"] ? "checked" : "" ?>>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    <?= $schedule["supervisor1name"] ?>
+                                    <?= $schedule["issupervisor1came"] ? '(' . $schedule["supervisor1checkintime"] . ')' : "" ?>
+                                </label>
+                            </div>
 
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" disabled <?= $schedule["supervisor1came"] ? "checked" : "" ?>>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        <?= $schedule["supervisor2name"] ?>
-                                        <?= $schedule["supervisor2came"] ? '(' . $schedule["supervisor2checkintime"] . ')' : "" ?>
-                                    </label>
-                                </div>
-                            </form>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" disabled <?= $schedule["issupervisor2came"] ? "checked" : "" ?>>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    <?= $schedule["supervisor2name"] ?>
+                                    <?= $schedule["supervisor2came"] ? '(' . $schedule["supervisor2checkintime"] . ')' : "" ?>
+                                </label>
+                            </div>
                         </td>
                         <td>
                             <div>
