@@ -43,7 +43,7 @@
 <link rel="stylesheet" href="./assets/css/default.css?v=<?php echo FILE_VERSION ?>">
 
 <link rel="stylesheet" href="./assets/css/header.css?v=<?php echo FILE_VERSION ?>">
-<link rel="stylesheet" href="./assets/css/footer.css?v=<?php echo FILE_VERSION ?>">
+<!-- <link rel="stylesheet" href="./assets/css/footer.css?v=<?php echo FILE_VERSION ?>"> -->
 
 <!-- ========== End Stylesheet ========== -->
 <?php loadGlobalCSS(); ?>
