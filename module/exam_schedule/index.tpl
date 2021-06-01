@@ -52,7 +52,7 @@
                                 <input class="form-check-input" type="checkbox" value="" disabled <?= $schedule["issupervisor2came"] ? "checked" : "" ?>>
                                 <label class="form-check-label" for="flexCheckDefault" <?= $schedule["issupervisor2came"] ? "style='opacity: 1'" : "" ?>>
                                     <?= $schedule["supervisor2name"] ?>
-                                    <?= $schedule["supervisor2came"] ? '(' . $schedule["supervisor2checkintime"] . ')' : "" ?>
+                                    <?= $schedule["issupervisor2came"] ? '(' . $schedule["supervisor2checkintime"] . ')' : "" ?>
                                 </label>
                             </div>
                         </td>
