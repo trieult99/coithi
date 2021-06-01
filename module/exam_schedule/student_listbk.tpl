@@ -32,7 +32,7 @@
                         <td><?= $student["mssv"] ?></td>
                         <td><?= $student["name"] ?></td>
                         <td>
-                            <input onclick="checkAbsent(this)" data-classroomcode="<?= $classroomcode ?>" data-mssv="<?= $student["mssv"] ?>" data-name="<?= $student["name"] ?>" class="form-check-input" type="checkbox" <?= $session["loginusertypecode"] == "teacher" ? "" : "disabled" ?> <?= $student["isabsent"] ? "checked style='opacity: 1'" : ""  ?>>
+                            <input onclick="checkAbsent(this)" data-classroomcode="<?= $classroomcode ?>" data-mssv="<?= $student["mssv"] ?>" data-name="<?= $student["name"] ?>" class="form-check-input" type="checkbox" <?= $session["loginusertypecode"] == "teacher" ? "" : "disabled" ?> <?= $student["isabsent"] ? "checked" : ""  ?>>
                         </td>
                         <td>
                             <ul class="list-group list-group-flush" id="vp_<?= $index ?>">
