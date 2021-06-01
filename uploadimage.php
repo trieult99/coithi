@@ -42,14 +42,18 @@ if ($createDir_permission == true) {
     exit;
 }
 
-$files_post = reArrayFiles($_FILES['imagepath']);
-foreach ($files_post as $file) {
+//$files_post = reArrayFiles($_FILES['imagepath']);
+
+//foreach ($files_post as $file) {
+    $file = $_FILES;
+   
     $finfo = new finfo(FILEINFO_MIME_TYPE);
-    $ext = pathinfo($file["name"], PATHINFO_EXTENSION);
-    $filesize = $file['size'];
-    $fileName = str_replace("." . $ext, "-" . uniqid() . "." . $ext, $file["name"]);
+    //$ext = pathinfo($file['image']["name"], PATHINFO_EXTENSION);
+    $filesize = $file['image']['size'];
+    $fileName = $file['image']["name"];
+    
     $target_file = $sub_dir . $fileName;
-    $filetype = $finfo->file($file['tmp_name']);
+    $filetype = $file['image']['type'];
     $res_item = array(
         "type" => $filetype,
         //"filename" => $file["name"] . uniqid(),
@@ -64,7 +68,7 @@ foreach ($files_post as $file) {
         $res_item["status"] = "failed";
         $res_item["message"] = "Định dạng file không đúng";
         array_push($response, $res_item);
-        continue;
+        //continue;
     };
 
     // validate file size
@@ -72,21 +76,21 @@ foreach ($files_post as $file) {
         $res_item["status"] = "failed";
         $res_item["message"] = "File quá nặng";
         array_push($response, $res_item);
-        continue;
+        //continue;
     }
-
+    
     // check upload success
-    if (!move_uploaded_file($file["tmp_name"], $target_file)) {
+    if (!move_uploaded_file($file['image']["tmp_name"], $target_file)) {
         $res_item["status"] = "failed";
         $res_item["message"] = "Có lỗi xảy ra khi upload file";
         array_push($response, $res_item);
-        continue;
+        //continue;
     } else {
         $res_item["status"] = "sucess";
         $res_item["message"] = "File đã được upload thành công";
         array_push($response, $res_item);
     }
-}
+//}
 
 echo json_encode($response);
 

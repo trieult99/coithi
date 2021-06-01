@@ -48,10 +48,10 @@ $("#addNote").click(() => {
             if ($("#reportImg")[0].files.length != 0) {
                 var file_data;
                 file_data = $('#reportImg').prop('files')[0];
-
+               
                 let form_data = new FormData();
                 form_data.append('image', file_data);
-
+                console.log(form_data.get('image'));
                 xhr(main_http_server + "uploadimage.php", form_data, (res) => {
                     var response = JSON.parse(res);
                     // if (response.error != '') {
