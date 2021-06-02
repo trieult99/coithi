@@ -6,8 +6,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="<?php HTTP_SERVER ?>/exam_schedule/index.gbe">Lịch thi</a>
+                    <!-- <a class="nav-link" href="<?php HTTP_SERVER ?>/exam_schedule/index.gbe">Lịch thi</a> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Lịch thi
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" href="<?php HTTP_SERVER ?>/exam_schedule/index.gbe?type=today">Trong ngày</a></li>
+                            <li><a class="dropdown-item" href="<?php HTTP_SERVER ?>/exam_schedule/index.gbe?type=all">Cả mùa thi</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php HTTP_SERVER ?>/search/search_mssv.gbe">Tra cứu thông tin sinh viên</a>
