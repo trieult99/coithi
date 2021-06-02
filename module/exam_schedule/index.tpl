@@ -10,7 +10,7 @@
         <table id="TableSort" class="table table-bordered">
             <thead class="thead-light">
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">STT</th>
                     <th scope="col">Thời gian thi</th>
                     <th scope="col">Phòng thi</th>
                     <th scope="col">Môn thi</th>
@@ -24,7 +24,7 @@
                 <?php if ($listSchedule) foreach ($listSchedule as $index => $schedule) { ?>
                     <tr class="bg-light">
                         <th scope="row">
-                            <?= $index ?>
+                            <?= $index + 1 ?>
                         </th>
                         <td>
                             <?= $schedule["time"] ?>
@@ -55,6 +55,19 @@
                                     <?= $schedule["issupervisor2came"] ? '(' . $schedule["supervisor2checkintime"] . ')' : "" ?>
                                 </label>
                             </div>
+                            <?php if ($schedule["supervisorbackup"] != "") { ?>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" disabled <?= $schedule["issupervisorbackupcame"] ? "checked" : "" ?>>
+                                    <label class="form-check-label" for="flexCheckDefault" <?= $schedule["issupervisorbackupcame"] ? "style='opacity: 1'" : "" ?>>
+                                        <?= $schedule["supervisorbackupname"] ?>
+                                        <?= $schedule["issupervisorbackupcame"] ? '(' . $schedule["supervisorbackupcheckintime"] . ')' : "" ?>
+                                    </label>
+                                </div>
+                            <?php } else { ?>
+                                <div name="handleaddevent" style="cursor: pointer" data-bs-toggle="modal" data-bs-target="#Modal" onclick="openModal(this)" data-classroomname="<?= $schedule['classroomname'] ?>" data-classroomcode="<?= $schedule["classroomcode"] ?>">
+                                    <u>Add</u>
+                                </div>
+                            <?php } ?>
                         </td>
                         <td>
                             <div>
@@ -68,6 +81,29 @@
                 <?php } ?>
             </tbody>
         </table>
+    </div>
+
+    <div class="modal fade" id="Modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label class="form-label mt-2" for="teacherList">Supervisor</label>
+                    <!-- <input class="form-control" id="teacherList" type="text"> -->
+                    <select class="form-select" id="teacherList">
+                    </select>
+
+                    <!-- <input class="form-control" id="solution" type="text"> -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="addNote">Add</button>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 

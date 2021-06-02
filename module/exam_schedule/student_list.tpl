@@ -15,7 +15,7 @@
         <table id="TableSort" class="table table-bordered">
             <thead class="thead-light">
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">STT</th>
                     <th scope="col">MSSV</th>
                     <th scope="col">Họ và tên</th>
                     <th scope="col" style="width: 10%;">Vắng</th>
@@ -27,7 +27,7 @@
                 <?php if ($studentList) foreach ($studentList as $index => $student) { ?>
                     <tr>
                         <th scope="row">
-                            <?= $index ?>
+                            <?= $index + 1 ?>
                         </th>
                         <td>
                             <a href="<?= HTTP_SERVER ?>/search/search_mssv.gbe?mssv=<?= $student['mssv'] ?>"><?= $student["mssv"] ?></a>
@@ -64,7 +64,7 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="ModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="ModalLabel"></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">

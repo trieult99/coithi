@@ -22,3 +22,42 @@ function checkExam(e) {
     }
 
 }
+
+function openModal(e) {
+    $("#ModalLabel").html("Bổ sung giám thị coi thi phòng " + $(e).attr("data-classroomname"));
+    $('#Modal').attr({ "data-classroomcode": $(e).attr("data-classroomcode") });
+    // teacherList
+    let formData = new FormData();
+    formData.append("classroomcode", $(e).attr("data-classroomcode"));
+    xhr(main_http_server + "ajax/getTeacherList.gbe", formData, (res) => {
+        var response = JSON.parse(res);
+        if (response.error == '') {
+            let arr = "";
+            (response.data).forEach(teacher => {
+                arr += `<option value="${teacher.usercode}" selected>${teacher.fullname}</option>`;
+            });
+            $("#teacherList").html(arr);    
+        }
+    });
+}
+
+
+function classroom_addSupervisorBackup(formData) {
+    xhr(main_http_server + "ajax/addSupervisorBackup.gbe", formData, (res) => {
+        var response = JSON.parse(res);
+        if (response.error != '') {
+            alert(response.error)
+        }
+    });
+}
+$("#addNote").click(() => {
+    let classroomcode = $('#Modal').attr("data-classroomcode");
+    let teachercode = $("#teacherList").val();
+    if (confirm("Xác nhận bổ sung giám thị?")) {
+        let formData = new FormData();
+        formData.append("classroomcode", classroomcode);
+        formData.append("teachercode", teachercode);
+        classroom_addSupervisorBackup(formData);
+        location.reload();
+    }
+})
