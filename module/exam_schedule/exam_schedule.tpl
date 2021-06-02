@@ -3,8 +3,8 @@
         <h2 class="heading">LỊCH THI</h2>
         <?php if ($session["loginusertypecode"] == "secretary") { ?>
             <div class="input-group mb-3">
-                <input type="file" class="form-control" id="inputGroupFile02">
-                <label class="input-group-text" for="inputGroupFile02">Tạo lịch thi mới</label>
+                <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" accept=".zip">
+                <button class="btn btn-outline-primary" type="button" id="inputGroupFileAddon04">Tạo lịch thi mới</button>
             </div>
         <?php } ?>
         <table id="TableSort" class="table table-bordered">
@@ -15,7 +15,8 @@
                     <th scope="col">Phòng thi</th>
                     <th scope="col">Môn thi</th>
                     <th scope="col">Đã lấy đề</th>
-                    <th scope="col">GV có mặt</th>
+                    <th scope="col">Giám thị có mặt</th>
+                    <th scope="col">Giám thị bổ sung</th>
                     <th scope="col"></th>
 
                 </tr>
@@ -36,8 +37,7 @@
                             <?= $schedule["subjectname"] ?>
                         </td>
                         <td>
-                            <input data-classroomname="<?= $schedule['classroomname'] ?>" data-classroomcode="<?= $schedule['classroomcode'] ?>" class="form-check-input" type="checkbox" <?= $session["loginusertypecode"] == "secretary" ? 'onclick="checkExam(this)"'
-                                                                                                                                                                                                : "disabled" ?> <?= $schedule["exampaperstatus"]  ? "checked" : "" ?>>
+                            <input data-classroomname="<?= $schedule['classroomname'] ?>" data-classroomcode="<?= $schedule['classroomcode'] ?>" class="form-check-input" type="checkbox" <?= $session["loginusertypecode"] == "secretary" ? 'onclick="checkExam(this)"' : "disabled" ?> <?= $schedule["exampaperstatus"]  ? "checked" : "" ?>>
                         </td>
                         <td>
                             <div class="form-check">
@@ -55,6 +55,9 @@
                                     <?= $schedule["issupervisor2came"] ? '(' . $schedule["supervisor2checkintime"] . ')' : "" ?>
                                 </label>
                             </div>
+
+                        </td>
+                        <td>
                             <?php if ($schedule["supervisorbackup"] != "") { ?>
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" disabled <?= $schedule["issupervisorbackupcame"] ? "checked" : "" ?>>
@@ -63,22 +66,24 @@
                                         <?= $schedule["issupervisorbackupcame"] ? '(' . $schedule["supervisorbackupcheckintime"] . ')' : "" ?>
                                     </label>
                                 </div>
+                                <?php if ($session["loginusertypecode"] == "secretary") { ?>
+                                    <div name="handleaddevent" style="cursor: pointer" data-bs-toggle="modal" data-bs-target="#Modal" onclick="openModal(this)" data-classroomname="<?= $schedule['classroomname'] ?>" data-classroomcode="<?= $schedule["classroomcode"] ?>">
+                                        <small class="text-warning"><i class="fas fa-user-edit"></i> Edit</small>
+                                    </div>
+                                <?php } ?>
                                 <?php } else {
                                 if ($session["loginusertypecode"] == "secretary") { ?>
                                     <div name="handleaddevent" style="cursor: pointer" data-bs-toggle="modal" data-bs-target="#Modal" onclick="openModal(this)" data-classroomname="<?= $schedule['classroomname'] ?>" data-classroomcode="<?= $schedule["classroomcode"] ?>">
-                                        <u>Add</u>
+                                        <small class="text-success"><i class="fas fa-user-plus"></i> Add</small>
                                     </div>
                             <?php }
                             } ?>
                         </td>
                         <td>
                             <div>
-                                <a href="<?php HTTP_SERVER ?>/exam_schedule/student_list.gbe?classroomcode=<?= $schedule['classroomcode'] ?>" target="_blank">Danh sách sinh
-                                    viên</a> -
-                                <a href="/data/dssv/<?= $schedule["classroomcode"] ?>.csv" download class="text-success"><i class="fas fa-download"></i></a>
+                                <a href="<?php HTTP_SERVER ?>/exam_schedule/student_list.gbe?classroomcode=<?= $schedule['classroomcode'] ?>" target="_blank">Danh sách sinh viên</a>
                             </div>
                         </td>
-
                     </tr>
                 <?php } ?>
             </tbody>
@@ -117,7 +122,7 @@
             "aaSorting": [],
             columnDefs: [{
                 orderable: false,
-                targets: [2, 3, 4, 5, 6]
+                targets: [2, 3, 4, 5, 6, 7]
             }],
             "createdRow": function(row, data, index) {
                 let currentDate = moment().format("DD-MM-YYYY");

@@ -52,7 +52,7 @@
                         </td>
                         <td>
                             <?php if ($student["report"] != "") { ?>
-                                <a href="<?= HTTP_SERVER . '/' . $student["report"] ?>" class="text-dark" download><i class="fas fa-file-download"></i> Biên_bản.jpg</a>
+                                <a href="<?= HTTP_SERVER . '/' . $student["report"] ?>" class="text-dark" download><i class="fas fa-file-download"></i> BBVP_<?= $student['mssv'] ?>.jpg</a>
                             <?php } ?>
                         </td>
                     </tr>
@@ -69,14 +69,12 @@
                     </div>
                     <div class="modal-body">
                         <label class="form-label" for="content">Content</label>
-                        <!-- <input class="form-control" id="content" type="text"> -->
                         <select class="form-select" id="content">
                             <option value="Quay cóp" selected>Quay cóp</option>
                             <option value="Xem tài liệu">Xem tài liệu</option>
                         </select>
 
                         <label class="form-label mt-2" for="solution">Solution</label>
-                        <!-- <input class="form-control" id="solution" type="text"> -->
                         <select class="form-select" id="solution">
                             <option value="Nhắc nhở" selected>Nhắc nhở</option>
                             <option value="Lập biên bản">Lập biên bản</option>
@@ -84,10 +82,8 @@
 
                         <div id="reportImgContainer" style="display: none">
                             <label class="form-label mt-2" for="reportImg">Biên bản (upload image)</label>
-                            <input type="file" class="form-control" id="reportImg">
+                            <input type="file" class="form-control" id="reportImg" accept="image/*">
                         </div>
-
-                        <!-- <input class="form-control" id="solution" type="text"> -->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -107,7 +103,7 @@
             "aaSorting": [],
             columnDefs: [{
                 orderable: false,
-                targets: [2, 3, 4]
+                targets: [2, 3, 4, 5]
             }]
         });
     });

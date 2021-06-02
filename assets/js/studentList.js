@@ -16,6 +16,7 @@ function checkAbsent(e) {
             formData.append("mssv", e.getAttribute("data-mssv"));
             formData.append("isabsent", e.checked ? 1 : 0);
             classroom_updateStudent(formData);
+            location.reload();
         }
         else e.checked = !e.checked
     } else {

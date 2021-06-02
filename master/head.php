@@ -38,8 +38,6 @@
 
 <link rel="stylesheet" href="./assets/plugins/bootstrap/bootstrap.min.css">
 <link rel="stylesheet" href="./assets/plugins/font-awesome-5.13.0/css/all.css">
-<!--<link rel="stylesheet" href="./assets/plugins/swiper-5.4.5/css/swiper.min.css">-->
-<!-- <link rel="stylesheet" href="./assets/plugins/animate/animate.min.css"> -->
 <link rel="stylesheet" href="./assets/css/default.css?v=<?php echo FILE_VERSION ?>">
 
 <link rel="stylesheet" href="./assets/css/header.css?v=<?php echo FILE_VERSION ?>">

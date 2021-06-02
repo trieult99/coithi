@@ -4,7 +4,7 @@ if (empty(@$_SESSION['loginusercode'])) {
 }
 $session = @$_SESSION;
 $gbeLayout = "layout.tpl";
-$gbeTemplate = "index.tpl";
+$gbeTemplate = "exam_schedule.tpl";
 $type = @$_GET["type"];
 
 addGlobalJS("./assets/js/examschedule.js");
