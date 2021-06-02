@@ -63,17 +63,19 @@
                                         <?= $schedule["issupervisorbackupcame"] ? '(' . $schedule["supervisorbackupcheckintime"] . ')' : "" ?>
                                     </label>
                                 </div>
-                            <?php } else { ?>
-                                <div name="handleaddevent" style="cursor: pointer" data-bs-toggle="modal" data-bs-target="#Modal" onclick="openModal(this)" data-classroomname="<?= $schedule['classroomname'] ?>" data-classroomcode="<?= $schedule["classroomcode"] ?>">
-                                    <u>Add</u>
-                                </div>
-                            <?php } ?>
+                                <?php } else {
+                                if ($session["loginusertypecode"] == "secretary") { ?>
+                                    <div name="handleaddevent" style="cursor: pointer" data-bs-toggle="modal" data-bs-target="#Modal" onclick="openModal(this)" data-classroomname="<?= $schedule['classroomname'] ?>" data-classroomcode="<?= $schedule["classroomcode"] ?>">
+                                        <u>Add</u>
+                                    </div>
+                            <?php }
+                            } ?>
                         </td>
                         <td>
                             <div>
                                 <a href="<?php HTTP_SERVER ?>/exam_schedule/student_list.gbe?classroomcode=<?= $schedule['classroomcode'] ?>" target="_blank">Danh sách sinh
                                     viên</a> -
-                                <a href="#" class="text-success"><i class="fas fa-download"></i></a>
+                                <a href="/data/dssv/<?= $schedule["classroomcode"] ?>.csv" download class="text-success"><i class="fas fa-download"></i></a>
                             </div>
                         </td>
 
