@@ -34,7 +34,7 @@ function openModal(e) {
         if (response.error == '') {
             let arr = "";
             (response.data).forEach(teacher => {
-                arr += `<option value="${teacher.usercode}" selected>${teacher.fullname}</option>`;
+                arr += `<option value="${teacher.usercode}" selected>${teacher.fullname} - ${teacher.usercode}</option>`;
             });
             $("#teacherList").html(arr);    
         }
