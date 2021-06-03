@@ -36,7 +36,7 @@ function openModal(e) {
             (response.data).forEach(teacher => {
                 arr += `<option value="${teacher.usercode}" selected>${teacher.fullname} - ${teacher.usercode}</option>`;
             });
-            $("#teacherList").html(arr);    
+            $("#teacherList").html(arr);
         }
     });
 }
@@ -61,3 +61,26 @@ $("#addNote").click(() => {
         location.reload();
     }
 })
+
+$("#uploadschedule").click(() => {
+    if (confirm("Xác nhận đăng tải lịch thi?") && $("#uploadschedulefile")[0].files.length != 0) {
+        var file_data;
+        file_data = $('#uploadschedulefile').prop('files')[0];
+
+        let form_data = new FormData();
+        form_data.append('image', file_data);
+
+        xhr(main_http_server + "uploadschedule.php", form_data, (res) => {
+            var response = JSON.parse(res);
+            if (response[0].status == 'sucess') {
+                console.log(response[0].url);
+                formData.append("image", response[0].url);
+                
+                // Gọi xhr api tại đây
+
+                location.reload();
+            }
+        })
+
+    }
+});

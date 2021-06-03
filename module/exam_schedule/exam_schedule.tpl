@@ -3,8 +3,8 @@
         <h2 class="heading">LỊCH THI</h2>
         <?php if ($session["loginusertypecode"] == "secretary") { ?>
             <div class="input-group mb-3">
-                <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" accept=".zip">
-                <button class="btn btn-outline-primary" type="button" id="inputGroupFileAddon04">Tạo lịch thi mới</button>
+                <input type="file" class="form-control" id="uploadschedulefile" aria-describedby="uploadschedule" aria-label="Upload" accept=".csv">
+                <button class="btn btn-outline-primary" type="button" id="uploadschedule">Tạo lịch thi mới</button>
             </div>
         <?php } ?>
         <table id="TableSort" class="table table-bordered">
