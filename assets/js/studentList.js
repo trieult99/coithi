@@ -36,7 +36,7 @@ $("#addNote").click(() => {
     let classroomcode = $('#Modal').attr("data-classroomcode");
     let note = $("#content").val() + " - " + $("#solution").val();
 
-    if ($("#solution").val() == "Lập biên bản" && $("#reportImg")[0].files.length === 0) {
+    if ($("#solution").val() == "SL002" && $("#reportImg")[0].files.length === 0) {
         alert("Đăng tải biên bản dưới dạng hình ảnh cho biện pháp 'Lập biên bản'");
     } else
         if (note != "" && confirm("Xác nhận sinh viên " + mssv + " vi phạm?")) {
@@ -74,8 +74,7 @@ $("#addNote").click(() => {
 })
 
 $('#solution').on('change', function () {
-    console.log(this.value);
-    if (this.value == "Lập biên bản")
+    if (this.value == "SL002")
         $("#reportImgContainer").show();
     else
         $("#reportImgContainer").hide();

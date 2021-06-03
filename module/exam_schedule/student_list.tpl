@@ -68,16 +68,16 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <label class="form-label" for="content">Content</label>
+                        <label class="form-label" for="content">Nội dung vi phạm</label>
                         <select class="form-select" id="content">
-                            <option value="Quay cóp" selected>Quay cóp</option>
-                            <option value="Xem tài liệu">Xem tài liệu</option>
+                            <option value="CT001" selected>Quay cóp</option>
+                            <option value="CT002">Xem tài liệu</option>
                         </select>
 
-                        <label class="form-label mt-2" for="solution">Solution</label>
+                        <label class="form-label mt-2" for="solution">Hình thức xử lý</label>
                         <select class="form-select" id="solution">
-                            <option value="Nhắc nhở" selected>Nhắc nhở</option>
-                            <option value="Lập biên bản">Lập biên bản</option>
+                            <option value="SL001" selected>Nhắc nhở</option>
+                            <option value="SL002">Lập biên bản</option>
                         </select>
 
                         <div id="reportImgContainer" style="display: none">

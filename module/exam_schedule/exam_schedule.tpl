@@ -98,7 +98,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <label class="form-label mt-2" for="teacherList">Supervisor</label>
+                    <label class="form-label mt-2" for="teacherList">Giảng viên</label>
                     <!-- <input class="form-control" id="teacherList" type="text"> -->
                     <select class="form-select" id="teacherList">
                     </select>
