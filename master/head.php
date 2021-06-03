@@ -16,8 +16,11 @@
 <?php } else { ?>
     <!-- Đây là nơi cho những trang không có seourl -->
     <?php $functionTitle = array(
-        "index" => "Trang chủ",
-        "login" => "Đăng nhập"
+        "exam_schedule" => "Lịch thi",
+        "search_mssv" => "Tra cứu thông tin sinh viên",
+        "student_list" => "Danh sách sinh viên",
+        "login" => "Đăng nhập",
+        "index" => "Trang chủ"
     ) ?>
     <meta property="og:title" content="Homepage">
     <meta property="og:url" content="<?php echo HTTP_SERVER ?>">
