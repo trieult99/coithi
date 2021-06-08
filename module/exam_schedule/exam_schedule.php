@@ -7,9 +7,9 @@ $gbeLayout = "layout.tpl";
 $gbeTemplate = "exam_schedule.tpl";
 $type = @$_GET["type"];
 
-addGlobalJS("./assets/js/examschedule.js");
+addGlobalJS("./assets/js/examSchedule.js");
 $params = array(
-    'type' => $type
+    'type' => $type?$type:"today"
 );
 $jsontext = callAPI("", "classroom_getSchedule.api", array(), $params);
 $data = json_decode($jsontext, true);
