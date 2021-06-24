@@ -36,10 +36,8 @@ function checkIn(e) {
                 if (response.error != '') {
                     alert(response.error)
                 }
-                else {
-                    location.reload();
-                }
             })
+            location.reload();
         }
         else e.checked = !e.checked
     } else {
