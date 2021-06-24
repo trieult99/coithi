@@ -23,6 +23,32 @@ function checkExam(e) {
 
 }
 
+function checkIn(e) {
+
+    if (e.checked == 1) {
+        if (confirm("Xác nhận giám thị " + e.getAttribute("data-supervisorname") + " đã đến phòng thi " + e.getAttribute("data-classroomname") + " ?")) {
+            let formData = new FormData();
+            formData.append("classroomcode", e.getAttribute("data-classroomcode"));
+            formData.append("teachercode", e.getAttribute("data-teachercode"));
+
+            xhr(main_http_server + "ajax/checkIn.gbe", formData, (res) => {
+                var response = JSON.parse(res);
+                if (response.error != '') {
+                    alert(response.error)
+                }
+                else {
+                    location.reload();
+                }
+            })
+        }
+        else e.checked = !e.checked
+    } else {
+        e.checked = !e.checked;
+        alert("Bạn không thể thay đổi trạng thái giám thị đã có mặt")
+    }
+
+}
+
 function openModal(e) {
     $("#ModalLabel").html("Bổ sung giám thị coi thi phòng " + $(e).attr("data-classroomname"));
     $('#Modal').attr({ "data-classroomcode": $(e).attr("data-classroomcode") });
@@ -45,6 +71,7 @@ function openModal(e) {
 function classroom_addSupervisorBackup(formData) {
     xhr(main_http_server + "ajax/addSupervisorBackup.gbe", formData, (res) => {
         var response = JSON.parse(res);
+<<<<<<< HEAD
     if (response.error != '') {
         alert(response.error)
     }
@@ -60,6 +87,24 @@ if (confirm("Xác nhận bổ sung giám thị?")) {
     classroom_addSupervisorBackup(formData);
     location.reload();
 }
+=======
+        if (response.error != '') {
+            alert(response.error)
+        } else {
+            location.reload();
+        }
+    });
+}
+$("#addNote").click(() => {
+    let classroomcode = $('#Modal').attr("data-classroomcode");
+    let teachercode = $("#teacherList").val();
+    if (confirm("Xác nhận bổ sung giám thị?")) {
+        let formData = new FormData();
+        formData.append("classroomcode", classroomcode);
+        formData.append("teachercode", teachercode);
+        classroom_addSupervisorBackup(formData);
+    }
+>>>>>>> a1debebbea6c41132c4752fbdd771867c663c815
 })
 
 $("#uploadschedule").click(() => {
@@ -70,11 +115,21 @@ $("#uploadschedule").click(() => {
     let form_data = new FormData();
     form_data.append('image', file_data);
 
+<<<<<<< HEAD
     xhr(main_http_server + "uploadschedule.php", form_data, (res) => {
         var response = JSON.parse(res);
     if (response[0].status == 'sucess') {
         console.log(response[0].url);
         formData.append("image", response[0].url);
+=======
+        xhr(main_http_server + "uploadschedule.php", form_data, (res) => {
+            var response = JSON.parse(res);
+            if (response[0].status == 'sucess') {
+                console.log(response[0].url);
+                formData.append("image", response[0].url);
+
+                // Gọi xhr api tại đây
+>>>>>>> a1debebbea6c41132c4752fbdd771867c663c815
 
         // Gọi xhr api tại đây
 

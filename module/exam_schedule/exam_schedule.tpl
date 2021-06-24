@@ -35,16 +35,16 @@
                         </td>
                         <td>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" disabled <?= $schedule["issupervisor1came"] ? "checked" : "" ?>>
-                                <label class="form-check-label" for="flexCheckDefault" <?= $schedule["issupervisor1came"] ? "style='opacity: 1'" : ($schedule["issupervisor1block"] ? "style='color: red'" : "") ?>>
+                                <input class="form-check-input" type="checkbox" data-classroomname="<?= $schedule['classroomname'] ?>" data-classroomcode="<?= $schedule['classroomcode'] ?>" data-teachercode="<?= $schedule["supervisor1"] ?>" data-supervisorname="<?= $schedule["supervisor1name"] ?>" <?= in_array($session["loginusertypecode"], array("secretary", "inspector")) ? 'onclick="checkIn(this)"' : "disabled" ?> <?= $schedule["issupervisor1came"] ? "checked" : "" ?>>
+                                <label class="form-check-label" for="flexCheckDefault" <?= $schedule["issupervisor1came"] ? ($schedule["issupervisor1block"] ? "style='color: red; opacity: 1'" : "style='opacity: 1'") : ($schedule["issupervisor1block"] ? "style='color: red'" : "") ?>>
                                     <?= $schedule["supervisor1name"] ?>
                                     <?= $schedule["issupervisor1came"] ? '(' . $schedule["supervisor1checkintime"] . ')' : "" ?>
                                 </label>
                             </div>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" disabled <?= $schedule["issupervisor2came"] ? "checked" : "" ?>>
-                                <label class="form-check-label" for="flexCheckDefault" <?= $schedule["issupervisor2came"] ? "style='opacity: 1'" : ($schedule["issupervisor2block"] ? "style='color: red'" : "") ?>>
+                                <input class="form-check-input" type="checkbox" data-classroomname="<?= $schedule['classroomname'] ?>" data-classroomcode="<?= $schedule['classroomcode'] ?>" data-teachercode="<?= $schedule["supervisor2"] ?>" data-supervisorname="<?= $schedule["supervisor2name"] ?>" <?= in_array($session["loginusertypecode"], array("secretary", "inspector")) ? 'onclick="checkIn(this)"' : "disabled" ?> <?= $schedule["issupervisor2came"] ? "checked" : "" ?>>
+                                <label class="form-check-label" for="flexCheckDefault" <?= $schedule["issupervisor2came"] ? ($schedule["issupervisor2block"] ? "style='color: red; opacity: 1'" : "style='opacity: 1'") : ($schedule["issupervisor2block"] ? "style='color: red'" : "") ?>>
                                     <?= $schedule["supervisor2name"] ?>
                                     <?= $schedule["issupervisor2came"] ? '(' . $schedule["supervisor2checkintime"] . ')' : "" ?>
                                 </label>
@@ -54,8 +54,8 @@
                         <td>
                             <?php if ($schedule["supervisorbackup"] != "") { ?>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" disabled <?= $schedule["issupervisorbackupcame"] ? "checked" : "" ?>>
-                                    <label class="form-check-label" for="flexCheckDefault" <?= $schedule["issupervisorbackupcame"] ? "style='opacity: 1'" : ($schedule["issupervisorbackupblock"] ? "style='color: red'" : "") ?>>
+                                    <input class="form-check-input" type="checkbox" value="" data-classroomname="<?= $schedule['classroomname'] ?>" data-classroomcode="<?= $schedule['classroomcode'] ?>" data-teachercode="<?= $schedule["supervisorbackup"] ?>" data-supervisorname="<?= $schedule["supervisorbackupname"] ?>" <?= in_array($session["loginusertypecode"], array("secretary", "inspector")) ? 'onclick="checkIn(this)"' : "disabled" ?> <?= $schedule["issupervisorbackupcame"] ? "checked" : "" ?>>
+                                    <label class="form-check-label" for="flexCheckDefault" <?= $schedule["issupervisorbackupcame"] ? ($schedule["issupervisorbackupblock"] ? "style='color: red; opacity: 1'" : "style='opacity: 1'") : ($schedule["issupervisorbackupblock"] ? "style='color: red'" : "") ?>>
                                         <?= $schedule["supervisorbackupname"] ?>
                                         <?= $schedule["issupervisorbackupcame"] ? '(' . $schedule["supervisorbackupcheckintime"] . ')' : "" ?>
                                     </label>
