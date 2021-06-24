@@ -22,7 +22,7 @@ $mtypes = array(
     'gif' => 'image/gif'
 ); // mimetype
 $limitFileSize = 30000000; // 3000000 = 30MB.
-$root_dir = "data/report/"; // chỗ lưu file
+$root_dir = "data/schedule/"; // chỗ lưu file
 $createDir_permission = true; // quyền tạo subfolder
 $sub_dir = $root_dir;
 //--------------------- END CONFIG ---------------------------
@@ -46,7 +46,8 @@ if ($createDir_permission == true) {
 
 //foreach ($files_post as $file) {
     $file = $_FILES;
-   
+    var_dump($file);
+   exit;
     $finfo = new finfo(FILEINFO_MIME_TYPE);
     //$ext = pathinfo($file['image']["name"], PATHINFO_EXTENSION);
     $filesize = $file['image']['size'];

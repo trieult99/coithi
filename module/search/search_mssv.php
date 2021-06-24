@@ -7,10 +7,10 @@ $gbeLayout = "layout.tpl";
 $gbeTemplate = "search_mssv.tpl";
 
 addGlobalCSS("./assets/css/search.css");
+var_dump('aaa');
 
 
 $mssv = @$_GET["mssv"];
-
 if ($mssv) {
     $params = array(
         'mssv' => $mssv

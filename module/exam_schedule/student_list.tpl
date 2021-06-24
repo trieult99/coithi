@@ -2,7 +2,6 @@
     <div class="container">
         <div class="heading">
             <h2 class="d-inline">Danh sách sinh viên - Phòng <?= $classroom["classroomname"] ?></h2>
-            <a href="/data/dssv/<?= $classroomcode ?>.csv" download class="text-secondary"><i class="fas fa-file-download"></i> DSSV.csv</a>
         </div>
         <div>
             <p><span class="fw-bold">Môn:</span> <?= $classroom["subjectname"] ?></p>

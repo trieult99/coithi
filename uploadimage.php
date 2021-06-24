@@ -22,7 +22,7 @@ $mtypes = array(
     'gif' => 'image/gif'
 ); // mimetype
 $limitFileSize = 30000000; // 3000000 = 30MB.
-$root_dir = "data/report/"; // chỗ lưu file
+$root_dir = "assets/img/report/"; // chỗ lưu file
 $createDir_permission = true; // quyền tạo subfolder
 $sub_dir = $root_dir;
 //--------------------- END CONFIG ---------------------------
@@ -42,18 +42,14 @@ if ($createDir_permission == true) {
     exit;
 }
 
-//$files_post = reArrayFiles($_FILES['imagepath']);
-
-//foreach ($files_post as $file) {
-    $file = $_FILES;
-   
+$files_post = reArrayFiles($_FILES['imagepath']);
+foreach ($files_post as $file) {
     $finfo = new finfo(FILEINFO_MIME_TYPE);
-    //$ext = pathinfo($file['image']["name"], PATHINFO_EXTENSION);
-    $filesize = $file['image']['size'];
-    $fileName = $file['image']["name"];
-    
+    $ext = pathinfo($file["name"], PATHINFO_EXTENSION);
+    $filesize = $file['size'];
+    $fileName = str_replace("." . $ext, "-" . uniqid() . "." . $ext, $file["name"]);
     $target_file = $sub_dir . $fileName;
-    $filetype = $file['image']['type'];
+    $filetype = $finfo->file($file['tmp_name']);
     $res_item = array(
         "type" => $filetype,
         //"filename" => $file["name"] . uniqid(),
@@ -68,7 +64,7 @@ if ($createDir_permission == true) {
         $res_item["status"] = "failed";
         $res_item["message"] = "Định dạng file không đúng";
         array_push($response, $res_item);
-        //continue;
+        continue;
     };
 
     // validate file size
@@ -76,22 +72,20 @@ if ($createDir_permission == true) {
         $res_item["status"] = "failed";
         $res_item["message"] = "File quá nặng";
         array_push($response, $res_item);
-        //continue;
+        continue;
     }
-    
+
     // check upload success
-    if (!move_uploaded_file($file['image']["tmp_name"], $target_file)) {
+    if (!move_uploaded_file($file["tmp_name"], $target_file)) {
         $res_item["status"] = "failed";
         $res_item["message"] = "Có lỗi xảy ra khi upload file";
         array_push($response, $res_item);
-        //continue;
+        continue;
     } else {
         $res_item["status"] = "sucess";
         $res_item["message"] = "File đã được upload thành công";
         array_push($response, $res_item);
     }
-//}
-
+}
 echo json_encode($response);
-
 ?>

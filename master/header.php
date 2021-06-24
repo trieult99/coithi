@@ -18,6 +18,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?php HTTP_SERVER ?>/search/search_mssv.gbe">Tra cứu thông tin sinh viên</a>
                     </li>
+
+                   
+
+                    <?php if ($_SESSION["loginusertypecode"] == "secretary") { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php HTTP_SERVER ?>/fingerprint/add_fingerprint.gbe">Update/Test dữ liệu vân tay</a>
+                        </li>
+                    <?php } ?>
                 </ul>
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

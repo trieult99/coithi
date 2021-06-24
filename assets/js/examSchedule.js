@@ -1,10 +1,10 @@
 function classroom_updateExamPaperStatus(formData) {
     xhr(main_http_server + "ajax/updateExamPaperStatus.gbe", formData, (res) => {
         var response = JSON.parse(res);
-        if (response.error != '') {
-            alert(response.error)
-        }
-    });
+    if (response.error != '') {
+        alert(response.error)
+    }
+});
 }
 
 function checkExam(e) {
@@ -31,56 +31,56 @@ function openModal(e) {
     formData.append("classroomcode", $(e).attr("data-classroomcode"));
     xhr(main_http_server + "ajax/getTeacherList.gbe", formData, (res) => {
         var response = JSON.parse(res);
-        if (response.error == '') {
-            let arr = "";
-            (response.data).forEach(teacher => {
-                arr += `<option value="${teacher.usercode}" selected>${teacher.fullname} - ${teacher.usercode}</option>`;
-            });
-            $("#teacherList").html(arr);
-        }
+    if (response.error == '') {
+        let arr = "";
+        (response.data).forEach(teacher => {
+            arr += `<option value="${teacher.usercode}" selected>${teacher.fullname} - ${teacher.usercode}</option>`;
     });
+    $("#teacherList").html(arr);
+}
+});
 }
 
 
 function classroom_addSupervisorBackup(formData) {
     xhr(main_http_server + "ajax/addSupervisorBackup.gbe", formData, (res) => {
         var response = JSON.parse(res);
-        if (response.error != '') {
-            alert(response.error)
-        }
-    });
+    if (response.error != '') {
+        alert(response.error)
+    }
+});
 }
 $("#addNote").click(() => {
     let classroomcode = $('#Modal').attr("data-classroomcode");
-    let teachercode = $("#teacherList").val();
-    if (confirm("Xác nhận bổ sung giám thị?")) {
-        let formData = new FormData();
-        formData.append("classroomcode", classroomcode);
-        formData.append("teachercode", teachercode);
-        classroom_addSupervisorBackup(formData);
-        location.reload();
-    }
+let teachercode = $("#teacherList").val();
+if (confirm("Xác nhận bổ sung giám thị?")) {
+    let formData = new FormData();
+    formData.append("classroomcode", classroomcode);
+    formData.append("teachercode", teachercode);
+    classroom_addSupervisorBackup(formData);
+    location.reload();
+}
 })
 
 $("#uploadschedule").click(() => {
     if (confirm("Xác nhận đăng tải lịch thi?") && $("#uploadschedulefile")[0].files.length != 0) {
-        var file_data;
-        file_data = $('#uploadschedulefile').prop('files')[0];
+    var file_data;
+    file_data = $('#uploadschedulefile').prop('files')[0];
 
-        let form_data = new FormData();
-        form_data.append('image', file_data);
+    let form_data = new FormData();
+    form_data.append('image', file_data);
 
-        xhr(main_http_server + "uploadschedule.php", form_data, (res) => {
-            var response = JSON.parse(res);
-            if (response[0].status == 'sucess') {
-                console.log(response[0].url);
-                formData.append("image", response[0].url);
-                
-                // Gọi xhr api tại đây
+    xhr(main_http_server + "uploadschedule.php", form_data, (res) => {
+        var response = JSON.parse(res);
+    if (response[0].status == 'sucess') {
+        console.log(response[0].url);
+        formData.append("image", response[0].url);
 
-                location.reload();
-            }
-        })
+        // Gọi xhr api tại đây
 
+        location.reload();
     }
+})
+
+}
 });

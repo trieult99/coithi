@@ -34,7 +34,8 @@ function openModal(e) {
 $("#addNote").click(() => {
     let mssv = $('#Modal').attr("data-mssv");
     let classroomcode = $('#Modal').attr("data-classroomcode");
-    let note = $("#content").val() + " - " + $("#solution").val();
+    let note = $("#content option:selected").text() + " - " + $("#solution option:selected").text();
+   
 
     if ($("#solution").val() == "SL002" && $("#reportImg")[0].files.length === 0) {
         alert("Đăng tải biên bản dưới dạng hình ảnh cho biện pháp 'Lập biên bản'");
