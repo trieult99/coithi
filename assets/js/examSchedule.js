@@ -71,23 +71,6 @@ function openModal(e) {
 function classroom_addSupervisorBackup(formData) {
     xhr(main_http_server + "ajax/addSupervisorBackup.gbe", formData, (res) => {
         var response = JSON.parse(res);
-<<<<<<< HEAD
-    if (response.error != '') {
-        alert(response.error)
-    }
-});
-}
-$("#addNote").click(() => {
-    let classroomcode = $('#Modal').attr("data-classroomcode");
-let teachercode = $("#teacherList").val();
-if (confirm("Xác nhận bổ sung giám thị?")) {
-    let formData = new FormData();
-    formData.append("classroomcode", classroomcode);
-    formData.append("teachercode", teachercode);
-    classroom_addSupervisorBackup(formData);
-    location.reload();
-}
-=======
         if (response.error != '') {
             alert(response.error)
         } else {
@@ -104,7 +87,6 @@ $("#addNote").click(() => {
         formData.append("teachercode", teachercode);
         classroom_addSupervisorBackup(formData);
     }
->>>>>>> a1debebbea6c41132c4752fbdd771867c663c815
 })
 
 $("#uploadschedule").click(() => {
@@ -115,13 +97,6 @@ $("#uploadschedule").click(() => {
     let form_data = new FormData();
     form_data.append('image', file_data);
 
-<<<<<<< HEAD
-    xhr(main_http_server + "uploadschedule.php", form_data, (res) => {
-        var response = JSON.parse(res);
-    if (response[0].status == 'sucess') {
-        console.log(response[0].url);
-        formData.append("image", response[0].url);
-=======
         xhr(main_http_server + "uploadschedule.php", form_data, (res) => {
             var response = JSON.parse(res);
             if (response[0].status == 'sucess') {
@@ -129,7 +104,6 @@ $("#uploadschedule").click(() => {
                 formData.append("image", response[0].url);
 
                 // Gọi xhr api tại đây
->>>>>>> a1debebbea6c41132c4752fbdd771867c663c815
 
         // Gọi xhr api tại đây
 
