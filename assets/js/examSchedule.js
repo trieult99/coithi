@@ -1,10 +1,10 @@
 function classroom_updateExamPaperStatus(formData) {
     xhr(main_http_server + "ajax/updateExamPaperStatus.gbe", formData, (res) => {
         var response = JSON.parse(res);
-    if (response.error != '') {
-        alert(response.error)
-    }
-});
+        if (response.error != '') {
+            alert(response.error)
+        }
+    });
 }
 
 function checkExam(e) {
@@ -34,10 +34,11 @@ function checkIn(e) {
             xhr(main_http_server + "ajax/checkIn.gbe", formData, (res) => {
                 var response = JSON.parse(res);
                 if (response.error != '') {
-                    alert(response.error)
+                    alert(response.error);
+                } else {
+                    location.reload();
                 }
             })
-            location.reload();
         }
         else e.checked = !e.checked
     } else {
@@ -55,14 +56,14 @@ function openModal(e) {
     formData.append("classroomcode", $(e).attr("data-classroomcode"));
     xhr(main_http_server + "ajax/getTeacherList.gbe", formData, (res) => {
         var response = JSON.parse(res);
-    if (response.error == '') {
-        let arr = "";
-        (response.data).forEach(teacher => {
-            arr += `<option value="${teacher.usercode}" selected>${teacher.fullname} - ${teacher.usercode}</option>`;
+        if (response.error == '') {
+            let arr = "";
+            (response.data).forEach(teacher => {
+                arr += `<option value="${teacher.usercode}" selected>${teacher.fullname} - ${teacher.usercode}</option>`;
+            });
+            $("#teacherList").html(arr);
+        }
     });
-    $("#teacherList").html(arr);
-}
-});
 }
 
 
@@ -89,11 +90,11 @@ $("#addNote").click(() => {
 
 $("#uploadschedule").click(() => {
     if (confirm("Xác nhận đăng tải lịch thi?") && $("#uploadschedulefile")[0].files.length != 0) {
-    var file_data;
-    file_data = $('#uploadschedulefile').prop('files')[0];
+        var file_data;
+        file_data = $('#uploadschedulefile').prop('files')[0];
 
-    let form_data = new FormData();
-    form_data.append('image', file_data);
+        let form_data = new FormData();
+        form_data.append('image', file_data);
 
         xhr(main_http_server + "uploadschedule.php", form_data, (res) => {
             var response = JSON.parse(res);
@@ -103,11 +104,11 @@ $("#uploadschedule").click(() => {
 
                 // Gọi xhr api tại đây
 
-        // Gọi xhr api tại đây
+                // Gọi xhr api tại đây
 
-        location.reload();
+                location.reload();
+            }
+        })
+
     }
-})
-
-}
 });

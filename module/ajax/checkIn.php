@@ -1,4 +1,3 @@
-classroom_checkin
 <?php
 $params = array(
     "classroomcode" => @$_POST["classroomcode"],
