@@ -23,6 +23,31 @@ function checkExam(e) {
 
 }
 
+function checkIn(e) {
+
+    if (e.checked == 1) {
+        if (confirm("Xác nhận giám thị " + e.getAttribute("data-supervisorname") + " đã đến phòng thi " + e.getAttribute("data-classroomname") + " ?")) {
+            let formData = new FormData();
+            formData.append("classroomcode", e.getAttribute("data-classroomcode"));
+            formData.append("teachercode", e.getAttribute("data-teachercode"));
+
+            xhr(main_http_server + "ajax/checkIn.gbe", formData, (res) => {
+                var response = JSON.parse(res);
+                if (response.error != '') {
+                    alert(response.error)
+                }
+            })
+
+            location.reload();
+        }
+        else e.checked = !e.checked
+    } else {
+        e.checked = !e.checked;
+        alert("Bạn không thể thay đổi trạng thái giám thị đã có mặt")
+    }
+
+}
+
 function openModal(e) {
     $("#ModalLabel").html("Bổ sung giám thị coi thi phòng " + $(e).attr("data-classroomname"));
     $('#Modal').attr({ "data-classroomcode": $(e).attr("data-classroomcode") });
@@ -75,7 +100,7 @@ $("#uploadschedule").click(() => {
             if (response[0].status == 'sucess') {
                 console.log(response[0].url);
                 formData.append("image", response[0].url);
-                
+
                 // Gọi xhr api tại đây
 
                 location.reload();
