@@ -73,6 +73,8 @@ function classroom_addSupervisorBackup(formData) {
         var response = JSON.parse(res);
         if (response.error != '') {
             alert(response.error)
+        } else {
+            location.reload();
         }
     });
 }
@@ -84,7 +86,6 @@ $("#addNote").click(() => {
         formData.append("classroomcode", classroomcode);
         formData.append("teachercode", teachercode);
         classroom_addSupervisorBackup(formData);
-        location.reload();
     }
 })
 
